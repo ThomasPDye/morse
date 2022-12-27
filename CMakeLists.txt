@@ -10,8 +10,11 @@ set(msvc_c "$<COMPILE_LANG_AND_ID:C,MSVC>")
 include(CTest)
 enable_testing()
 
+add_subdirectory(portaudio build EXCLUDE_FROM_ALL)
+
 add_executable(morse morse.c main.c)
-target_link_libraries(morse portaudio rt m asound jack pthread)
+target_link_libraries(morse m)
+target_link_libraries(morse PortAudio)
 target_compile_options(morse INTERFACE
   "$<${gcc_like_c}:-Wall;-Wextra;-Wshadow;-Wformat=2;-Wunused;-Werror;>"
   "$<${msvc_c}:-W3;-WX>"
