@@ -4,8 +4,8 @@
 #include <stdlib.h>
 #include <portaudio.h>
 
-#define SAMPLE_RATE 44100
-#define NUM_SECONDS 10
+#define SAMPLE_RATE 48000
+#define NUM_SECONDS 100
 #define NUM_CHANNELS 1
 #define NUM_SAMPLES (NUM_SECONDS * SAMPLE_RATE)
 #define MORSE_UNIT_DURATION 0.2

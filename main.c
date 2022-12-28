@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
     rewind(f);
 
     // Allocate a buffer for the input string
-    char *input_string = (char *)malloc(input_size + 1);
+    char *input_string = calloc(input_size + 1, sizeof(char));
     if (input_string == NULL)
     {
         fprintf(stderr, "Error: Could not allocate memory for input string\n");
@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
     input_string[input_size] = '\0';
 
     // Allocate a buffer for the output samples
-    float *output_samples = malloc(NUM_SAMPLES * sizeof(float));
+    float *output_samples = calloc(NUM_SAMPLES, sizeof(float));
     if (output_samples == NULL)
     {
         fprintf(stderr, "Error: Could not allocate memory for output samples\n");
